@@ -1,0 +1,8 @@
+# @package hydra.launcher
+submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+timeout_min: 1440
+cpus_per_task: 32
+tasks_per_node: 1
+mem_gb: 32
+partition: medium
+name: ${hydra.job.name}

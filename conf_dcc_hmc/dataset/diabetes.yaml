@@ -1,0 +1,5 @@
+name: "diabetes"
+filepath: ${hydra:runtime.cwd}/data/diabetes/diabetes2.csv
+num_train: 460
+num_val: 154
+num_test: 154

@@ -1,0 +1,4 @@
+name: "boston"
+filepath: ${hydra:runtime.cwd}/data/boston_housing/housing.csv
+num_train: 403
+num_test: 103

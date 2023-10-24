@@ -1,0 +1,39 @@
+hydra:
+  run:
+    dir: ./experiments_dcc_hmc/${name}/${hydra.job.override_dirname}/seed=${seed}
+  sweep:
+    dir: ./experiments_dcc_hmc/${name}/${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        item_sep: '_'
+        exclude_keys:
+          - seed
+          - name
+
+# defaults:
+  # - launcher: slurm
+  # - override hydra/launcher: submitit_slurm
+
+name: test_dcc_hmc_fun_ind
+seed: 0
+
+num_test: 1000
+num_train: 150
+num_val: 50
+
+dummy_sample: False
+classification: False
+varying_noise: False
+
+dcc_hmc:
+  _target_: models.pyro_extensions.dcc_hmc.DCCHMC
+  num_parallel: 1
+  num_mcmc: 200
+  num_slp_samples: 5
+  max_slps: null
+  enumerate_branches: True
+  num_chains: 1
+  num_mcmc_warmup: 200
+  max_stacked: null
+  beta: !!float inf

@@ -1,0 +1,5 @@
+name: "stroke"
+filepath: ${hydra:runtime.cwd}/data/stroke/healthcare-dataset-stroke-data.csv
+num_train: 2944
+num_val: 982
+num_test: 982

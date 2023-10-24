@@ -1,0 +1,5 @@
+name: "california"
+filepath: ${hydra:runtime.cwd}/data/california_housing/housing.csv
+num_train: 1000
+num_val: 100
+num_test: 1000
